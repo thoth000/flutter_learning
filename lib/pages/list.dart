@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'hero1.dart';
 import 'change_notifier_provider.dart';
 import 'selector.dart';
 import 'change_mode.dart';
@@ -17,6 +18,7 @@ class _PageListState extends State<PageList> {
         ChangeModePage(),
         CnProviderPage(),
         SelectorPage(),
+        Hero1Page(),
       ],
     );
   }
