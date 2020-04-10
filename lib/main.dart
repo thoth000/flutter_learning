@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'change_notifier_provider.dart';
-import 'selector.dart';
-import 'hero1.dart';
-import 'hero2.dart';
+import 'package:provider/provider.dart';
+import 'pages/list.dart';
+import 'change_notifier.dart';
 
 void main() => runApp(
-      MyApp()
+      ChangeNotifierProvider(create: (_) => DataStorage(), child: MyApp()),
     );
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Hero2Page()
+      theme: Provider.of<DataStorage>(context).appTheme(),
+      home: PageList(),
     );
   }
 }

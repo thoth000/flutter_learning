@@ -1,4 +1,4 @@
-package com.example.providertest
+package com.example.flutter_learning
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

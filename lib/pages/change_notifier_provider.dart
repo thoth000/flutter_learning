@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'change_notifier.dart';
+import '../change_notifier.dart';
 
 class CnProviderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CnCounter>(
-      create: (_) => CnCounter(),
+    return ChangeNotifierProvider<DataStorage>(
+      create: (_) => DataStorage(),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('ChangeNotifierProvider()'),
@@ -28,7 +28,7 @@ class CnProviderPage extends StatelessWidget {
 class _RaisedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counter = Provider.of<CnCounter>(context,listen: false);
+    final counter = Provider.of<DataStorage>(context,listen: false);
 
     return RaisedButton(
       onPressed: counter.increment,
@@ -40,7 +40,7 @@ class _RaisedButton extends StatelessWidget {
 class _CounterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counter = Provider.of<CnCounter>(context);
+    final counter = Provider.of<DataStorage>(context);
 
     return Center(
       child:
