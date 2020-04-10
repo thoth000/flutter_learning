@@ -15,7 +15,7 @@ class CnProviderPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text('ここも再描画されるのかな\nされませんでした💦'),
+            Text('ここも再描画されるのかな\n結果としてはされませんでした💦'),
             _CounterText(),
             _RaisedButton(),
           ],
