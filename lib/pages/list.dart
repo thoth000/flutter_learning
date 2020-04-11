@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'hero1.dart';
 import 'change_notifier_provider.dart';
 import 'selector.dart';
-import 'change_mode.dart';
+import 'change_theme.dart';
+import 'alert_dialog.dart';
 
 class PageList extends StatefulWidget {
   @override
@@ -15,10 +16,11 @@ class _PageListState extends State<PageList> {
     return PageView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        ChangeModePage(),
+        ChangeThemePage(),
         CnProviderPage(),
         SelectorPage(),
         Hero1Page(),
+        ALPage(),
       ],
     );
   }

@@ -32,7 +32,7 @@ class _CountButton extends StatelessWidget {
     final counter = Provider.of<DataStorage>(context, listen: false);
 
     return RaisedButton(
-      onPressed: counter.increment,
+      onPressed: () => counter.increment(1),
       child: const Icon(Icons.add),
     );
   }
