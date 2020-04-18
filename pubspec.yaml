@@ -20,9 +20,15 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^4.0.4
+  hive: ^1.4.1+1
+  hive_flutter: ^0.3.0+2
+  path_provider: ^1.6.5
+
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  hive_generator: ^0.7.0+2
+  build_runner: ^1.8.1
   flutter_test:
     sdk: flutter
 
@@ -32,10 +38,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   assets:
