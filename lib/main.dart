@@ -5,7 +5,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'pages/list.dart';
 import 'change_notifier.dart';
-import 'value_listenable.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +22,9 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (_) => DataStorage(),
-      child: MyApp(),
+      child: ChangeNotifierProvider(
+        create: (_)=>TimeNotifier(),
+        child: MyApp(),),
     ),
   );
 }

@@ -33,3 +33,11 @@ class DataStorage with ChangeNotifier {
     notifyListeners();
   }
 }
+
+class TimeNotifier with ChangeNotifier{
+  DateTime recordTime=DateTime.now();
+  void changeTime(){
+    recordTime=DateTime.now();
+    notifyListeners();
+  }
+}
