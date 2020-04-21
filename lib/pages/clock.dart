@@ -9,21 +9,32 @@ class ClockPage extends StatefulWidget {
 }
 
 class _ClockPageState extends State<ClockPage> {
-  void initState(){
+  int dur = 0;
+  void initState() {
     super.initState();
+    var date = DateTime.now();
     //今,昔の順番でDuration　昔から今までの時差をとる
-    var dur=DateTime.now().difference(DateTime(2020,4,20,00,00));
-    //時差をすべて分に変換する
-    print(dur.inMinutes);
+    setState(() => dur = DateTime.now()
+        .difference(DateTime(date.year, date.month, date.day, 0, 0))
+        .inMinutes);
   }
+
   @override
   Widget build(BuildContext context) {
+    var date = DateTime.now();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('クロック'),
       ),
       body: Center(
-        child: Text(DateFormat("yyyy年MM月dd日HH時mm分").format(DateTime(2020,4,20,00,00))),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(DateFormat("yyyy年MM月dd日HH時mm分").format(date)),
+            Text('もう'+dur.toString()+'分たった'),
+          ],
+        ),
       ),
     );
   }

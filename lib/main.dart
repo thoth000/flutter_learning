@@ -15,7 +15,7 @@ void main() async {
     await Hive.box('data').put('welcome', 'Yay');
   } else {
     var box = Hive.box('data');
-    await box.put('isDark',true);
+    await box.put('isDark', true);
     await box.put('value', 0);
     await box.put('welcome', 'Boo');
   }
@@ -23,8 +23,9 @@ void main() async {
     ChangeNotifierProvider(
       create: (_) => DataStorage(),
       child: ChangeNotifierProvider(
-        create: (_)=>TimeNotifier(),
-        child: MyApp(),),
+        create: (_) => TimeNotifier(),
+        child: MyApp(),
+      ),
     ),
   );
 }
