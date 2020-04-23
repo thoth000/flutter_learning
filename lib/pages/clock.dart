@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../change_notifier.dart';
-import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
 class ClockPage extends StatefulWidget {

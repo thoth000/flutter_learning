@@ -7,6 +7,7 @@ import 'alert_dialog.dart';
 import 'radio.dart';
 import 'test.dart';
 import 'clock.dart';
+import 'reordable.dart';
 
 class PageList extends StatefulWidget {
   @override
@@ -19,6 +20,7 @@ class _PageListState extends State<PageList> {
     return PageView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
+        RLPage(),
         ClockPage(),
         TestPage(),
         ChangeThemePage(),

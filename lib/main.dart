@@ -23,7 +23,7 @@ void main() async {
     ChangeNotifierProvider(
       create: (_) => DataStorage(),
       child: ChangeNotifierProvider(
-        create: (_) => TimeNotifier(),
+        create: (_) => ListNotifier(),
         child: MyApp(),
       ),
     ),

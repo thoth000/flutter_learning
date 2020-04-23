@@ -34,10 +34,15 @@ class DataStorage with ChangeNotifier {
   }
 }
 
-class TimeNotifier with ChangeNotifier{
-  DateTime recordTime=DateTime.now();
-  void changeTime(){
-    recordTime=DateTime.now();
+class ListNotifier with ChangeNotifier{
+  var list = [["イラスト",1],["勉強",2],["競プロ",3],["アプリ開発",4]];
+  void reorder(oldIndex,newIndex){
+    if(oldIndex < newIndex){
+      newIndex-=1;
+    }
+    //removeAtは取り出すみたいなイメージ
+    var model = list.removeAt(oldIndex);
+    list.insert(newIndex, model);
     notifyListeners();
   }
 }
