@@ -46,3 +46,11 @@ class ListNotifier with ChangeNotifier{
     notifyListeners();
   }
 }
+
+class ClockNotifier with ChangeNotifier{
+  var time =DateTime.now();
+  void reload(timer){
+    time = DateTime.now();
+    notifyListeners();
+  }
+}

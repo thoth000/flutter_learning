@@ -24,7 +24,10 @@ void main() async {
       create: (_) => DataStorage(),
       child: ChangeNotifierProvider(
         create: (_) => ListNotifier(),
-        child: MyApp(),
+        child: ChangeNotifierProvider(
+          create: (_)=> ClockNotifier(),
+          child: MyApp(),
+        ),
       ),
     ),
   );
