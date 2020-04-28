@@ -34,9 +34,9 @@ class ChartsPage extends StatelessWidget {
 }
 
 class Chart extends StatelessWidget {
-  Color color;
-  double number;
-  String title;
+  final Color color;
+  final double number;
+  final String title;
   Chart(this.color,this.number,this.title);
   @override
   Widget build(BuildContext context) {
