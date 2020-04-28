@@ -8,6 +8,7 @@ import 'radio.dart';
 import 'test.dart';
 import 'clock.dart';
 import 'reordable.dart';
+import 'chart.dart';
 
 class PageList extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class _PageListState extends State<PageList> {
     return PageView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
+        ChartsPage(),
         RLPage(),
         ClockPage(),
         TestPage(),
