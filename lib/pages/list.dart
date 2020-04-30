@@ -5,11 +5,10 @@ import 'selector.dart';
 import 'change_theme.dart';
 import 'alert_dialog.dart';
 import 'radio.dart';
-import 'test.dart';
 import 'clock.dart';
 import 'reordable.dart';
 import 'chart.dart';
-
+import 'bottom_navigate.dart';
 class PageList extends StatefulWidget {
   @override
   _PageListState createState() => _PageListState();
@@ -21,10 +20,10 @@ class _PageListState extends State<PageList> {
     return PageView(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
+        BottomNavigate(),
         ChartsPage(),
         RLPage(),
         ClockPage(),
-        TestPage(),
         ChangeThemePage(),
         CnProviderPage(),
         SelectorPage(),
