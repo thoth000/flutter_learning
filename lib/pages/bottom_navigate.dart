@@ -7,10 +7,11 @@ class BottomNavigate extends StatefulWidget {
 
 class _BottomNavigateState extends State<BottomNavigate> {
   int _currentIndex = 0;
-  final texts = ['ホーム', 'きろく','ゲーム', 'せってい'];
+  final texts = ['ホーム', 'きろく', 'ゲーム', 'せってい'];
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).primaryColor;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -19,38 +20,66 @@ class _BottomNavigateState extends State<BottomNavigate> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => null,
+      floatingActionButton: SizedBox(
+        width: 50,
+        height: 50,
+        child: RaisedButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100)
+          ),
+          onPressed: ()=>print('yey'),
+        ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 10,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('ホーム'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.today),
-            title: Text('最近の記録'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.gamepad),
-            title: Text('記録'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('せってい'),
-          ),
-        ],
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 5,
+        elevation: 5,
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.access_time),
+                color: (_currentIndex == 0) ? color : Colors.grey,
+                onPressed: () => setState(() {
+                  _currentIndex = 0;
+                }),
+              ),
+            ),
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.access_time),
+                color: (_currentIndex == 1) ? color : Colors.grey,
+                onPressed: () => setState(() {
+                  _currentIndex = 1;
+                }),
+              ),
+            ),
+            SizedBox(
+              width: 60,
+            ),
+            Expanded(
+              child: IconButton(
+                icon: Icon(Icons.access_time),
+                color: (_currentIndex == 2) ? color : Colors.grey,
+                onPressed: () => setState(() {
+                  _currentIndex = 2;
+                }),
+              ),
+            ),
+            Expanded(
+                          child: IconButton(
+                icon: Icon(Icons.access_time),
+                color: (_currentIndex == 3) ? color : Colors.grey,
+                onPressed: () => setState(() {
+                  _currentIndex = 3;
+                }),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
